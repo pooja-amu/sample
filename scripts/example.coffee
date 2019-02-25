@@ -8,7 +8,36 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+fs = require 'file-system'
+
 module.exports = (robot) ->
+  robot.respond /show calender/i, (res) ->
+    res.send "Today date is " + new Date
+
+
+module.exports = (robot) ->
+  today = new Date()
+  hours = today.getHours()
+  robot.respond /hi|hello/i,(res) ->
+    switch
+      when (hours >= 15) then res.send "Hi good evening !"
+      when (hours >12) then res.send "Hi good afternoon !"
+      when (hours >20) then res.send "Bonenuit"
+      else res.send "Good day !"
+
+
+
+
+    ###convertexcel 'C:\Users\drao32\Desktop\hubot.xlsx',undefined,options,(err,data) ->
+      if err throw err
+        res.send data###
+
+
+      # body...
+
+
+
+
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
