@@ -5,15 +5,15 @@ module.exports = (robot) ->
 
     msg.http("#{match}").timeout(2000).get() (err,res,body)->
       if err
-        msg.send "the site is down"
+        msg.send "The site is down :("
       else
         switch res.statusCode
           when 200
-            msg.send "the Site's health is good with status 200"
+            msg.send "The Site's health is good with status 200 !"
           when 404
-            msg.send "the response is 404, not found"
+            msg.send "The response is 404, not found :("
           else
-            msg.send "the site is up but there are errors"
+            msg.send "The site is up but there are errors."
             #msg.send "401 error"
       #   when 200
             #msg.send "#{match}: fine"

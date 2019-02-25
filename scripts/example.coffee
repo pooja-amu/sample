@@ -25,6 +25,10 @@ module.exports = (robot) ->
       when (hours >20) then res.send "Bonenuit"
       else res.send "Good day !"
 
+module.exports = (robot) ->
+  robot.respond /namaste/i, (res) ->
+    res.send "Welcome to India !"
+
 
 
 
