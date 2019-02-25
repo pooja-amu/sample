@@ -15,7 +15,7 @@ module.exports = (robot) ->
     res.send "Today date is " + new Date
 
 
-module.exports = (robot) ->
+#module.exports = (robot) ->
   today = new Date()
   hours = today.getHours()
   robot.respond /hi|hello/i,(res) ->
@@ -25,9 +25,7 @@ module.exports = (robot) ->
       when (hours >20) then res.send "Bonenuit"
       else res.send "Good day !"
 
-module.exports = (robot) ->
-  robot.respond /namaste/i, (res) ->
-    res.send "Welcome to India !"
+
 
 
 
